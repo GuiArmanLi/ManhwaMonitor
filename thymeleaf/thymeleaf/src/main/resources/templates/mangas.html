@@ -12,34 +12,26 @@
     <title>Mangas</title>
   </head>
   <body>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+    <section data-th-each="user : ${users}">
+      <div class="card" style="width: 18rem">
+        <img
+          data-th-text="${user.id}"
+          src="..."
+          class="card-img-top"
+          alt="Manga Image"
+        />
+        <div class="card-body">
+          <h5 data-th-text="${user.username}" class="card-title"></h5>
+          <p data-th-text="${user.email}" class="card-text"></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Categories</li>
+          <li data-th-text="${user.id}" class="list-group-item"></li>
+        </ul>
+        <div class="card-body">
+          <a data-th-text="${user.id}" href="#" class="card-link"></a>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

@@ -49,13 +49,4 @@ public class UserController {
         return "home";
     }
 
-    @GetMapping("/users/mangas")
-    public ModelAndView getMangas() {
-        ModelAndView mw = new ModelAndView("mangas");
-        mw.addObject("users", users.findAll());
-        return mw;
-    }
-
-
-
 }
