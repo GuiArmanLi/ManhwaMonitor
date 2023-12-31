@@ -23,10 +23,10 @@ public class UserService {
     public String login(String username, String password) {
         for (UserModel user : users.findAll()) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                return "redirect:/users/home";
+                return "redirect:/mangas";
             }
         }
-
         return "redirect:/login";
     }
+
 }
